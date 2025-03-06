@@ -1,16 +1,14 @@
 function getFormvalue() {
-    //Write your code here
-	event.preventDefault(); 
+            // Get the input values
+            let firstName = document.querySelector("input[name='fname']").value.trim();
+            let lastName = document.querySelector("input[name='lname']").value.trim();
 
-    let fname = document.forms["form1"]["fname"].value.trim();
-    let lname = document.forms["form1"]["lname"].value.trim();
+            // Check if both fields are filled
+            if (firstName === "" || lastName === "") {
+                alert("Please enter both first and last names.");
+                return;
+            }
 
-    if (fname === "" || lname === "") {
-        alert("Please enter both first and last name.");
-        return;
-    }
-
-    alert(fname + " " + lname);
-
-
-}
+            // Display the full name in an alert
+            alert(firstName + " " + lastName);
+        }
